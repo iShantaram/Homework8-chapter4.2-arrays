@@ -12,9 +12,8 @@ public class Main {
         while (summaryVklad < needSummary) {
             monthCount++;
             summaryVklad += vklad;
-        //} // чтобы выводить каждый месяц (а это 164 строчки), надо закомментить эту скобку и раскомментить следующую фигурную
-          System.out.println("Месяц " + monthCount + ", сумма накоплений равна " + summaryVklad + " рублей");
-        } // чтобы не выводить каждый месяц (а это 164 строчки), надо закомментить эту скобку и раскомментить предыдующую фигурную
+        }
+        System.out.println("Месяц " + monthCount + ", сумма накоплений равна " + summaryVklad + " рублей");
 
         // Task2
         System.out.println("\nTask 2:");
@@ -34,14 +33,16 @@ public class Main {
         int increasePopulationYFor1000People = 17;
         int decreasePopulationYFor1000People = 8;
 
-        int increasePopulationForY = populationY / 1000 * increasePopulationYFor1000People;
-        int decreasePopulationForY = populationY / 1000 * decreasePopulationYFor1000People;
-        int changePopulationY = increasePopulationForY - decreasePopulationForY;
-        int updatePopulationY = populationY;
+        int increasePopulationForY;
+        int decreasePopulationForY;
+        int changePopulationY;
 
         for (int i = 0; i <= 10; i++) {
-            System.out.println("Год " + i + ", численность населения составляет - " + updatePopulationY + " человек");
-            updatePopulationY += changePopulationY;
+            System.out.println("Год " + i + ", численность населения составляет - " + populationY + " человек");
+            increasePopulationForY = populationY / 1000 * increasePopulationYFor1000People;
+            decreasePopulationForY = populationY / 1000 * decreasePopulationYFor1000People;
+            changePopulationY = increasePopulationForY - decreasePopulationForY;
+            populationY += changePopulationY;
         }
 
 
@@ -54,37 +55,36 @@ public class Main {
         double percent = 0.07;
 
         monthCount = 0;
-        double summaryVkladVasilij = vkladVasilij;
 
-        while (summaryVkladVasilij < needSummary) {
+        while (vkladVasilij < needSummary) {
             monthCount++;
-            summaryVkladVasilij = summaryVkladVasilij*(1+percent);
-            System.out.println("Месяц " + monthCount + ", сумма вклада составляет " + summaryVkladVasilij);
+            vkladVasilij = vkladVasilij*(1+percent);
+            System.out.println("Месяц " + monthCount + ", сумма вклада составляет " + vkladVasilij);
         }
 
         // Task2
         System.out.println("\nTask 2:");
         monthCount = 0;
-        summaryVkladVasilij = vkladVasilij;
+        vkladVasilij = 15000;
 
-        while (summaryVkladVasilij < needSummary) {
+        while (vkladVasilij < needSummary) {
             monthCount++;
-            summaryVkladVasilij = summaryVkladVasilij*(1+percent);
+            vkladVasilij = vkladVasilij*(1+percent);
             if (monthCount%6 == 0) {
-                System.out.println("Месяц " + monthCount + ", сумма вклада составляет " + summaryVkladVasilij);
+                System.out.println("Месяц " + monthCount + ", сумма вклада составляет " + vkladVasilij);
             }
         }
 
         // Task3
         System.out.println("\nTask 3:");
         monthCount = 0;
-        summaryVkladVasilij = vkladVasilij;
+        vkladVasilij = 15000;
 
         while (monthCount <= 9*12) {
             monthCount++;
-            summaryVkladVasilij = summaryVkladVasilij*(1+percent);
+            vkladVasilij = vkladVasilij*(1+percent);
             if (monthCount%6 == 0) {
-                System.out.println("Месяц " + monthCount + ", сумма вклада составляет " + summaryVkladVasilij);
+                System.out.println("Месяц " + monthCount + ", сумма вклада составляет " + vkladVasilij);
             }
         }
 
